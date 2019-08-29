@@ -26,9 +26,12 @@ namespace Task1
             Console.Write("Введите ваш вес: ");
             int weight = Convert.ToInt32(Console.ReadLine());
 
+            //Метод склеивания
             Console.WriteLine("Имя:" + name + " Фамилия:" + surname + " Возраст:" + age + " Рост:" + growth + " Вес:" + weight);
-            
-            Console.Write(String.Format("Имя:{0} Фамилия:{1} Возраст:{2:0} Рост:{3:0} Вес:{4:0}", name, surname, age, growth, weight));
+            //Форматированный вывод
+            Console.WriteLine(String.Format("Имя:{0} Фамилия:{1} Возраст:{2:0} Рост:{3:0} Вес:{4:0}", name, surname, age, growth, weight));
+            //Интерполяция строк
+            Console.WriteLine($"Имя:{name} Фамилия:{surname} Возраст:{age} Рост:{growth} Вес:{weight}");
 
             Console.ReadKey();
         }
