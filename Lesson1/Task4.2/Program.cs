@@ -18,8 +18,11 @@ namespace Task4._2
             Console.Write("Введите значение переменной b: ");
             string b = Console.ReadLine();
 
-            Console.WriteLine("a:" + a + " b:" + b);
+            a = b + a;
+            b = a.Substring(b.Length);
+            a = a.Substring(0, a.Length - b.Length);
 
+            Console.WriteLine("a:" + a + " b:" + b);
             Console.ReadKey();
         }
     }
