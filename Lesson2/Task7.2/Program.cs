@@ -19,7 +19,10 @@ namespace Task7._2
             Console.Write("Введите число b: ");
             int b = Convert.ToInt32(Console.ReadLine());
             int amount = 0;
-            culcAmount(a, b, ref amount);
+            if (a < b)
+                culcAmount(a, b, ref amount);
+            else
+                culcAmount(b, a, ref amount);
 
             Console.WriteLine("Сумма чисел от a до b: " + amount);
             Console.ReadKey();
