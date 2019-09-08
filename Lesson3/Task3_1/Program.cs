@@ -21,7 +21,7 @@ namespace Task3_1
             Fraction y = new Fraction();
             y.num = (this.num * x.den) + (x.num * this.den);
             y.den = this.den * x.den;
-            GFD(ref y.num, ref y.den);
+            simplification(ref y.num, ref y.den);
             return y;
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Task3_1
             Fraction y = new Fraction();
             y.num = (this.num * x.den) - (x.num * this.den);
             y.den = this.den * x.den;
-            GFD(ref y.num, ref y.den);
+            simplification(ref y.num, ref y.den);
             return y;
         }
 
@@ -48,7 +48,7 @@ namespace Task3_1
             Fraction y = new Fraction();
             y.num = this.num * x.num;
             y.den = this.den * x.den;
-            GFD(ref y.num, ref y.den);
+            simplification(ref y.num, ref y.den);
             return y;
         }
 
@@ -62,7 +62,7 @@ namespace Task3_1
             Fraction y = new Fraction();
             y.num = this.num * x.den;
             y.den = this.den * x.num;
-            GFD(ref y.num, ref y.den);
+            simplification(ref y.num, ref y.den);
             return y;
         }
 
@@ -92,11 +92,11 @@ namespace Task3_1
         }
 
         /// <summary>
-        /// Сокращение дроби
+        /// Упрощение дроби
         /// </summary>
         /// <param name="num"></param>
         /// <param name="den"></param>
-        public static void GFD(ref long num, ref long den) {
+        public static void simplification(ref long num, ref long den) {
             long GCF = greatestCommonFactor(num, den);
             num = num / GCF;
             den = den / GCF;
