@@ -19,7 +19,12 @@ namespace Task2_1
             this.msg = msg;
         }
 
-        public string findLongestWord() {
+
+        /// <summary>
+        /// Нахождение самого длинного слова в строке
+        /// </summary>
+        /// <returns></returns>
+        public string[] findLongestWord() {
             string str1 = "";
             for (int i = 0; i < msg.Length; i++)
             {
@@ -30,10 +35,19 @@ namespace Task2_1
             }
 
             string[] str2 = str1.Split(' ');
-            string max = str2[0];
+            string tmp = str2[0];
             for (int i = 0; i < str2.Length; i++) {
-                if (str2[i].Length > max.Length) {
-                    max = str2[i];
+                if (str2[i].Length > tmp.Length) {
+                    tmp = str2[i];
+                }
+            }
+
+            string[] max = new string[1];
+            for (int i = 0; i < str2.Length; i++)
+            {
+                if (str2[i].Length == tmp.Length) {
+                    Array.Resize(ref max, max.Length+1);
+                    max[max.Length - 1] = str2[i];
                 }
             }
 
@@ -111,7 +125,11 @@ namespace Task2_1
             msg.consoleLimInLength(n);
             char ch = inputChar();
             msg.deleteWord(ch);
-            Console.WriteLine($"Longest word: {msg.findLongestWord()}");
+            Console.WriteLine($"Longest word: ");
+            string[] LongestWord = msg.findLongestWord();
+            for (int i = 0; i < LongestWord.Length; i++) {
+                Console.WriteLine($">>> {LongestWord[i]}");
+            }
 
 
             Pause();
