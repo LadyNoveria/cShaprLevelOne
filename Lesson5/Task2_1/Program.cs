@@ -18,6 +18,29 @@ namespace Task2_1
         public Message(string msg) {
             this.msg = msg;
         }
+
+        public string findLongestWord() {
+            string str1 = "";
+            for (int i = 0; i < msg.Length; i++)
+            {
+                if (@".,!?-".IndexOf(msg[i]) != -1)
+                    str1 += $" {msg[i]} ";
+                else
+                    str1 += $"{msg[i]}";
+            }
+
+            string[] str2 = str1.Split(' ');
+            string max = str2[0];
+            for (int i = 0; i < str2.Length; i++) {
+                if (str2[i].Length > max.Length) {
+                    max = str2[i];
+                }
+            }
+
+            return max;
+        }
+
+
         /// <summary>
         /// удаление слов, которые заканчиваются на заданный символ
         /// </summary>
@@ -47,14 +70,23 @@ namespace Task2_1
         /// </summary> 
         /// <param name="n"></param>
         public void consoleLimInLength(int n) {
-            string[] str = msg.Split(' ');
+            string str1 = "";
+            for (int i = 0; i < msg.Length; i++)
+            {
+                if (@".,!?-".IndexOf(msg[i]) != -1)
+                    str1 += $" {msg[i]} ";
+                else
+                    str1 += $"{msg[i]}";
+            }
+
+            string[] str2 = msg.Split(' ');
             string pattern = @"[a-zA-Z]{" + (n) + "}";
             Regex regex = new Regex(pattern);
 
-            for (int i = 0; i < str.Length;i++)
+            for (int i = 0; i < str2.Length;i++)
             {
-                if (regex.IsMatch(str[i]) && str[i].Length == n)
-                    Console.WriteLine($">>> {str[i]}");
+                if (regex.IsMatch(str2[i]) && str2[i].Length == n)
+                    Console.WriteLine($">>> {str2[i]}");
             }
         }
     }
@@ -79,7 +111,8 @@ namespace Task2_1
             msg.consoleLimInLength(n);
             char ch = inputChar();
             msg.deleteWord(ch);
-            //Console.WriteLine($"msg: {msg.getMsg()}");
+            Console.WriteLine($"Longest word: {msg.findLongestWord()}");
+
 
             Pause();
         }
