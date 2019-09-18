@@ -1,4 +1,4 @@
-п»їusing System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +21,7 @@ namespace Task2_1
         }
 
         /// <summary>
-        /// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃС‚СЂРѕРєРё СЃР°РјС‹С… РґР»РёРЅРЅС‹С… СЃР»РѕРІ СЃ РїРѕРјРѕС‰СЊСЋ StringBuilder
+        /// Формирование строки самых длинных слов с помощью StringBuilder
         /// </summary>
         /// <returns></returns>
         public StringBuilder stringOfLongestWords() {
@@ -35,7 +35,7 @@ namespace Task2_1
         }
 
         /// <summary>
-        /// РќР°С…РѕР¶РґРµРЅРёРµ СЃР°РјРѕРіРѕ РґР»РёРЅРЅРѕРіРѕ СЃР»РѕРІР° РІ СЃС‚СЂРѕРєРµ
+        /// Нахождение самого длинного слова в строке
         /// </summary>
         /// <returns></returns>
         public string[] findLongestWord()
@@ -60,7 +60,7 @@ namespace Task2_1
         }
 
         /// <summary>
-        /// Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРё
+        /// Формирование новой строки
         /// </summary>
         /// <returns></returns>
         private string NewLineForming()
@@ -76,7 +76,7 @@ namespace Task2_1
         }
 
         /// <summary>
-        /// СѓРґР°Р»РµРЅРёРµ СЃР»РѕРІ, РєРѕС‚РѕСЂС‹Рµ Р·Р°РєР°РЅС‡РёРІР°СЋС‚СЃСЏ РЅР° Р·Р°РґР°РЅРЅС‹Р№ СЃРёРјРІРѕР»
+        /// удаление слов, которые заканчиваются на заданный символ
         /// </summary>
         public void deleteWord(char ch) {
             string str1 = NewLineForming();
@@ -86,11 +86,11 @@ namespace Task2_1
                 if(@".,!?-".IndexOf(e) != -1) str3 += $"{e}";
                 else if(e != "" && e[e.Length - 1] != ch) str3 += $"{e} ";
             }
-            //РґРѕРїРёСЃР°С‚СЊ
+            //дописать
             Console.WriteLine($"msg: {str3}");
         }
         /// <summary>
-        /// Р’С‹РІРѕРґ СЃРѕРѕР±С‰РµРЅРёР№, СЃРѕРґРµСЂР¶Р°С‰РёС… РЅРµ Р±РѕР»РµРµ n СЃРёРјРІРѕР»РѕРІ
+        /// Вывод сообщений, содержащих не более n символов
         /// </summary> 
         /// <param name="n"></param>
         public void consoleLimInLength(int n) {
@@ -111,20 +111,20 @@ namespace Task2_1
     {
         static void Main(string[] args)
         {
-            //Р’СЏР»СЊС€РёРЅР° Р’РµСЂРѕРЅРёРєР°
-            /*. Р Р°Р·СЂР°Р±РѕС‚Р°С‚СЊ РєР»Р°СЃСЃ Message, СЃРѕРґРµСЂР¶Р°С‰РёР№ СЃР»РµРґСѓСЋС‰РёРµ СЃС‚Р°С‚РёС‡РµСЃРєРёРµ РјРµС‚РѕРґС‹ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё С‚РµРєСЃС‚Р°:
-            Р°) Р’С‹РІРµСЃС‚Рё С‚РѕР»СЊРєРѕ С‚Рµ СЃР»РѕРІР° СЃРѕРѕР±С‰РµРЅРёСЏ, РєРѕС‚РѕСЂС‹Рµ СЃРѕРґРµСЂР¶Р°С‚ РЅРµ Р±РѕР»РµРµ n Р±СѓРєРІ.
-            Р±) РЈРґР°Р»РёС‚СЊ РёР· СЃРѕРѕР±С‰РµРЅРёСЏ РІСЃРµ СЃР»РѕРІР°, РєРѕС‚РѕСЂС‹Рµ Р·Р°РєР°РЅС‡РёРІР°СЋС‚СЃСЏ РЅР° Р·Р°РґР°РЅРЅС‹Р№ СЃРёРјРІРѕР».
-            РІ) РќР°Р№С‚Рё СЃР°РјРѕРµ РґР»РёРЅРЅРѕРµ СЃР»РѕРІРѕ СЃРѕРѕР±С‰РµРЅРёСЏ.
-            Рі) РЎС„РѕСЂРјРёСЂРѕРІР°С‚СЊ СЃС‚СЂРѕРєСѓ СЃ РїРѕРјРѕС‰СЊСЋ StringBuilder РёР· СЃР°РјС‹С… РґР»РёРЅРЅС‹С… СЃР»РѕРІ СЃРѕРѕР±С‰РµРЅРёСЏ.
-            РџСЂРѕРґРµРјРѕРЅСЃС‚СЂРёСЂСѓР№С‚Рµ СЂР°Р±РѕС‚Сѓ РїСЂРѕРіСЂР°РјРјС‹ РЅР° С‚РµРєСЃС‚РѕРІРѕРј С„Р°Р№Р»Рµ СЃ РІР°С€РµР№ РїСЂРѕРіСЂР°РјРјРѕР№.*/
+            //Вяльшина Вероника
+            /*. Разработать класс Message, содержащий следующие статические методы для обработки текста:
+            а) Вывести только те слова сообщения, которые содержат не более n букв.
+            б) Удалить из сообщения все слова, которые заканчиваются на заданный символ.
+            в) Найти самое длинное слово сообщения.
+            г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения.
+            Продемонстрируйте работу программы на текстовом файле с вашей программой.*/
 
             //string str = inputMessage();
             string path = "..\\..\\path.txt"; 
             string str = outputFromFile(path);
             Message msg = new Message(str);
             int n = inputN();
-            //Console.WriteLine($"msg: {msg.getMsg()}");
+            Console.WriteLine($"msg: {msg.getMsg()}");
 
             msg.consoleLimInLength(n);
             char ch = inputChar();
@@ -140,7 +140,7 @@ namespace Task2_1
             Pause();
         }
         /// <summary>
-        /// Р§С‚РµРЅРёРµ СЃРѕРѕРѕР±С‰РµРЅРёСЏ РёР· С„Р°Р№Р»Р°
+        /// Чтение соообщения из файла
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
@@ -148,51 +148,50 @@ namespace Task2_1
         {
             string str = "";
             StreamReader sr = new StreamReader(fileName);
-            str = sr.ReadToEnd();
-            sr.Close();
+            str = sr.ReadLine();
             return str;
         }
 
         /// <summary>
-        /// Р’РІРѕРґ Р·РЅР°С‡РµРЅРёСЏ РґР»СЏ РѕРіСЂР°РЅРёС‡РµРЅРёР№ СЃРѕРѕР±С‰РµРЅРёР№
+        /// Ввод значения для ограничений сообщений
         /// </summary>
         /// <returns></returns>
         private static int inputN()
         {
-            Console.Write("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ СЃРѕРѕР±С‰РµРЅРёР№: ");
+            Console.Write("Введите значение для ограничения сообщений: ");
             int n = inputCheck();
             return n;
         }
         /// <summary>
-        /// Р’РІРѕРґ СЃРёРјРІРѕР»Р°
+        /// Ввод символа
         /// </summary>
         /// <returns></returns>
         private static char inputChar()
         {
-            Console.Write("Р’РІРµРґРёС‚Рµ СЃРёРјРІРѕР»: ");
+            Console.Write("Введите символ: ");
             string str = Console.ReadLine();
             char ch = str[0];
             return ch;
         }
         /// <summary>
-        /// Р—Р°РґРµСЂР¶РєР° СЌРєСЂР°РЅР°
+        /// Задержка экрана
         /// </summary>
         private static void Pause()
         {
             Console.ReadKey();
         }
         /// <summary>
-        /// Р’РІРѕРґ СЃРѕРѕР±С‰РµРЅРёСЏ
+        /// Ввод сообщения
         /// </summary>
         /// <returns></returns>
         public static string inputMessage() {
-            Console.Write("Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ: ");
+            Console.Write("Введите сообщение: ");
             string str = Console.ReadLine();
             return str;
         }
 
         /// <summary>
-        /// РџСЂРѕРІРµСЂРєР° РІРІРѕРґР°
+        /// Проверка ввода
         /// </summary>
         /// <returns></returns>
         public static int inputCheck()
@@ -203,7 +202,7 @@ namespace Task2_1
             do
             {
                 flag = int.TryParse(Console.ReadLine(), out temp);
-                if (!flag) Console.WriteLine("РќРµРІРµСЂРЅС‹Р№ С„РѕСЂРјР°С‚ РІРІРѕРґР°. Р’РІРµРґРёС‚Рµ С†РµР»РѕРµ С‡РёСЃР»Рѕ.");
+                if (!flag) Console.WriteLine("Неверный формат ввода. Введите целое число.");
             } while (!flag);
 
             return temp;
