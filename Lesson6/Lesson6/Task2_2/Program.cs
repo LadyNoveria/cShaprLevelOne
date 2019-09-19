@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task2_1
+namespace Task2_2
 {
     class Program
     {
@@ -78,7 +77,8 @@ namespace Task2_1
         /// <param name="x2">верхняя граница отрезка</param>
         /// <param name="step">шаг изменения</param>
         /// <returns></returns>
-        static string functionB(double x1, double x2, double step) {
+        static string functionB(double x1, double x2, double step)
+        {
             List<double> values = new List<double>();
             //заполняем массив точками функции (x, y)
             for (double i = x1; i <= x2; i += step)
@@ -135,7 +135,8 @@ namespace Task2_1
         /// <param name="x2">верхняя граница отрезка</param>
         /// <param name="step">шаг изменения</param>
         /// <returns></returns>
-        static string functionD(double x1, double x2, double step) {
+        static string functionD(double x1, double x2, double step)
+        {
             List<double> values = new List<double>();
             for (double i = x1; i <= x2; i += step)
             {
@@ -155,50 +156,101 @@ namespace Task2_1
             return result;
         }
 
-        delegate string Function(double x1, double x2, double step);
+        delegate string Function1(double x1, double x2, double step);
+        delegate string Function2(double x1, double x2, double step);
 
         static void Main(string[] args)
         {
             //Вяльшина Вероника
             /*2. Модифицировать программу нахождения минимума функции так, чтобы можно было передавать функцию в виде делегата.
-            а) Сделайте меню с различными функциями и предоставьте пользователю выбор, для какой функции и на каком отрезке находить минимум.*/
+            б) Используйте массив (или список) делегатов, в котором хранятся различные функции.*/
+            List<Function1> values1 = new List<Function1>();
+            values1.Add(functionA);
+            values1.Add(functionB);
+            List<Function2> values2 = new List<Function2>();
+            values2.Add(functionC);
+            values2.Add(functionD);
+            double x1, x2, step;
 
-            Function function;
             int f = functionSelection();
             switch (f)
             {
                 case 1:
                     Console.WriteLine("Вы выбрали функцию y = 2x^3 - 4x^2 + 6x");
-                    function = new Function(functionA);
+                    Function1 func1 = new Function1(values1[0]);
+                    setSegment(out x1, out x2, out step);
+                    minFunc1(x1, x2, step, func1);
                     break;
                 case 2:
                     Console.WriteLine("Вы выбрали функцию y = 6x^2 - 5x");
-                    function = new Function(functionB);
+                    func1 = new Function1(values1[1]);
+                    setSegment(out x1, out x2, out step);
+                    minFunc1(x1, x2, step, func1);
                     break;
                 case 3:
                     Console.WriteLine("Вы выбрали функцию y = 4x^2");
-                    function = new Function(functionC);
+                    Function2 func2 = new Function2(values2[0]);
+                    setSegment(out x1, out x2, out step);
+                    minFunc2(x1, x2, step, func2);
                     break;
                 case 4:
                     Console.WriteLine("Вы выбрали функцию y = 3x");
-                    function = new Function(functionD);
+                    func2 = new Function2(values2[1]);
+                    setSegment(out x1, out x2, out step);
+                    minFunc2(x1, x2, step, func2);
                     break;
                 default:
                     Console.WriteLine("Вы ничего не выбрали. Будет показана работа функции y=2x^3 - 4x^2 + 6x");
-                    function = new Function(functionA);
+                    func1 = new Function1(values1[0]);
+                    setSegment(out x1, out x2, out step);
+                    minFunc1(x1, x2, step, func1);
                     break;
             }
-
-            double x1 = inputValue("x1", out x1);
-            double x2 = inputValue("x2", out x2);
-            double step = inputValue("step", out step);
-            string result = function(x1, x2, step);
-            Console.WriteLine();
-            Console.WriteLine($"Минимум функции в точке: {result}");
 
 
             Pause();
         }
+
+        /// <summary>
+        /// Выбор отрезка и шага для нахождения точек функции
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="x2"></param>
+        /// <param name="step"></param>
+        private static void setSegment(out double x1, out double x2, out double step)
+        {
+            x1 = inputValue("x1", out x1);
+            x2 = inputValue("x2", out x2);
+            step = inputValue("step", out step);
+        }
+
+        /// <summary>
+        /// ВЫвод минимума функции для делегата Function1
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="x2"></param>
+        /// <param name="step"></param>
+        /// <param name="func"></param>
+        private static void minFunc1(double x1, double x2, double step, Function1 func)
+        {
+            string result = func(x1, x2, step);
+            Console.WriteLine();
+            Console.WriteLine($"Минимум функции в точке: {result}");
+        }
+        /// <summary>
+        /// ВЫвод минимума функции для делегата Function2
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="x2"></param>
+        /// <param name="step"></param>
+        /// <param name="func"></param>
+        private static void minFunc2(double x1, double x2, double step, Function2 func)
+        {
+            string result = func(x1, x2, step);
+            Console.WriteLine();
+            Console.WriteLine($"Минимум функции в точке: {result}");
+        }
+
         /// <summary>
         /// Ввод значений
         /// </summary>
@@ -224,7 +276,8 @@ namespace Task2_1
         /// Меню для пользователя - выбор функции
         /// </summary>
         /// <returns></returns>
-        public static int functionSelection() {
+        public static int functionSelection()
+        {
             Console.WriteLine("Для выбора функции y = 2x^3 - 4x^2 + 6x нажмите 1");
             Console.WriteLine("Для выбора функции y = 6x^2 - 5x нажмите 2");
             Console.WriteLine("Для выбора функции y = 4x^2 нажмите 3");
