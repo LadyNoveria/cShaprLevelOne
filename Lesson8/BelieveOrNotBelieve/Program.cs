@@ -67,6 +67,7 @@ namespace BelieveOrNotBelieve
             list = (List<Question>)xmlFormat.Deserialize(fStream);
             fStream.Close();
         }
+
         public int Count
         {
             get { return list.Count; }

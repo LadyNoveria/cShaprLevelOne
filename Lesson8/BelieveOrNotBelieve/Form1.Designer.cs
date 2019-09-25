@@ -36,7 +36,7 @@
             this.cboxTrue = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
             this.miOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.miSave = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,7 @@
             // 
             // tboxQuestion
             // 
-            this.tboxQuestion.Location = new System.Drawing.Point(1, 33);
+            this.tboxQuestion.Location = new System.Drawing.Point(0, 24);
             this.tboxQuestion.Multiline = true;
             this.tboxQuestion.Name = "tboxQuestion";
             this.tboxQuestion.Size = new System.Drawing.Size(614, 157);
@@ -71,6 +71,7 @@
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSaveQuest
             // 
@@ -80,6 +81,7 @@
             this.btnSaveQuest.TabIndex = 3;
             this.btnSaveQuest.Text = "Сохранить";
             this.btnSaveQuest.UseVisualStyleBackColor = true;
+            this.btnSaveQuest.Click += new System.EventHandler(this.btnSaveQuest_Click);
             // 
             // nudNumber
             // 
@@ -87,6 +89,7 @@
             this.nudNumber.Name = "nudNumber";
             this.nudNumber.Size = new System.Drawing.Size(58, 20);
             this.nudNumber.TabIndex = 4;
+            this.nudNumber.ValueChanged += new System.EventHandler(this.nudNumber_ValueChanged);
             // 
             // cboxTrue
             // 
@@ -109,47 +112,51 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(611, 24);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // fileToolStripMenuItem
+            // ToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miNew,
             this.miOpen,
             this.miSave,
             this.miExit});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.ToolStripMenuItem.Text = "File";
             // 
             // miNew
             // 
             this.miNew.Name = "miNew";
             this.miNew.Size = new System.Drawing.Size(180, 22);
             this.miNew.Text = "New";
+            this.miNew.Click += new System.EventHandler(this.miNew_Click);
             // 
             // miOpen
             // 
             this.miOpen.Name = "miOpen";
             this.miOpen.Size = new System.Drawing.Size(180, 22);
             this.miOpen.Text = "Open";
+            this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
             // 
             // miSave
             // 
             this.miSave.Name = "miSave";
             this.miSave.Size = new System.Drawing.Size(180, 22);
             this.miSave.Text = "Save";
+            this.miSave.Click += new System.EventHandler(this.miSave_Click);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
             this.miExit.Size = new System.Drawing.Size(180, 22);
             this.miExit.Text = "Exit";
+            this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // Form1
             // 
@@ -185,7 +192,7 @@
         private System.Windows.Forms.CheckBox cboxTrue;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miNew;
         private System.Windows.Forms.ToolStripMenuItem miOpen;
         private System.Windows.Forms.ToolStripMenuItem miSave;
