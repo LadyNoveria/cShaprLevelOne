@@ -83,10 +83,16 @@ namespace BelieveOrNotBelieve
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (nudNumber.Maximum == 1 || database == null) return;
-            database.Remove((int)nudNumber.Value - 1);
-            nudNumber.Maximum--;
-            if (nudNumber.Value > 1) nudNumber.Value = nudNumber.Value;
+            string message = "Вы уверены, что хотите удалить этот элемент?";
+            string caption = "Удаление элемента";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (nudNumber.Maximum == 1 || database == null) return;
+                database.Remove((int)nudNumber.Value - 1);
+                nudNumber.Maximum--;
+                if (nudNumber.Value > 1) nudNumber.Value = nudNumber.Value;
+            }
         }
 
         private void btnSaveQuest_Click(object sender, EventArgs e)
@@ -109,6 +115,26 @@ namespace BelieveOrNotBelieve
             btnSaveQuest.Enabled = true;
             btnDelete.Enabled = true;
             cboxTrue.Enabled = true;
+        }
+
+        private void description_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Замечтательная программа");
+        }
+
+        private void reference_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Здесь должна быть инструкция, но я ее еще не придумала =)");
+        }
+
+        private void copyright_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Автор Вася Пупкин, mailto: vasyapupkin99@yandex.ru");
+        }
+
+        private void version_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Версия программы 0.0.1");
         }
     }
 }
