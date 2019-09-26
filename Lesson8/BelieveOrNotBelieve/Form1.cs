@@ -16,6 +16,10 @@ namespace BelieveOrNotBelieve
         public Form1()
         {
             InitializeComponent();
+            nudNumber.Enabled = false;
+            btnSaveQuest.Enabled = false;
+            btnDelete.Enabled = false;
+            cboxTrue.Enabled = false;
         }
 
         private void miNew_Click(object sender, EventArgs e)
@@ -29,6 +33,7 @@ namespace BelieveOrNotBelieve
                 nudNumber.Minimum = 1;
                 nudNumber.Maximum = 1;
                 nudNumber.Value = 1;
+                availabilityChange();
             }
         }
 
@@ -42,6 +47,7 @@ namespace BelieveOrNotBelieve
                 nudNumber.Minimum = 1;
                 nudNumber.Maximum = database.Count;
                 nudNumber.Value = 1;
+                availabilityChange();
             }
         }
 
@@ -78,24 +84,24 @@ namespace BelieveOrNotBelieve
 
         private void btnSaveQuest_Click(object sender, EventArgs e)
         {
-            if (database != null)
-            {
                 database[(int)nudNumber.Value - 1].text = tboxQuestion.Text;
                 database[(int)nudNumber.Value - 1].trueFalse = cboxTrue.Checked;
-            }
-            else MessageBox.Show("База данных не создана");
         }
 
         private void nudNumber_ValueChanged(object sender, EventArgs e)
         {
-            if (database != null)
-            {
                 tboxQuestion.Text = database[(int)nudNumber.Value - 1].text;
                 cboxTrue.Checked = database[(int)nudNumber.Value - 1].trueFalse;
-            }
-            else {
-                MessageBox.Show("База данных не создана");
-            } 
+        }
+
+        /// <summary>
+        /// Изменение активности элементов формы
+        /// </summary>
+        private void availabilityChange() {
+            nudNumber.Enabled = true;
+            btnSaveQuest.Enabled = true;
+            btnDelete.Enabled = true;
+            cboxTrue.Enabled = true;
         }
     }
 }
