@@ -42,12 +42,19 @@ namespace BelieveOrNotBelieve
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                database = new TrueFalse(ofd.FileName);
-                database.Load();
-                nudNumber.Minimum = 1;
-                nudNumber.Maximum = database.Count;
-                nudNumber.Value = 1;
-                availabilityChange();
+                try
+                {
+                    database = new TrueFalse(ofd.FileName);
+                    database.Load();
+                    nudNumber.Minimum = 1;
+                    nudNumber.Maximum = database.Count;
+                    nudNumber.Value = 1;
+                    availabilityChange();
+                }
+                catch
+                {
+                    MessageBox.Show("Неверный формат данных", "Сообщение");
+                }
             }
         }
 
