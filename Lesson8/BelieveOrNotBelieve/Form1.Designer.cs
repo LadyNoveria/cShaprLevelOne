@@ -46,6 +46,7 @@
             this.reference = new System.Windows.Forms.ToolStripMenuItem();
             this.copyright = new System.Windows.Forms.ToolStripMenuItem();
             this.version = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -124,7 +125,7 @@
             this.ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 1);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(55, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(175, 24);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -135,6 +136,7 @@
             this.miNew,
             this.miOpen,
             this.miSave,
+            this.miSaveAs,
             this.miExit});
             this.ToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -147,7 +149,7 @@
             this.miNew.BackColor = System.Drawing.Color.Black;
             this.miNew.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.miNew.Name = "miNew";
-            this.miNew.Size = new System.Drawing.Size(102, 22);
+            this.miNew.Size = new System.Drawing.Size(180, 22);
             this.miNew.Text = "New";
             this.miNew.Click += new System.EventHandler(this.miNew_Click);
             // 
@@ -156,7 +158,7 @@
             this.miOpen.BackColor = System.Drawing.SystemColors.ControlText;
             this.miOpen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.miOpen.Name = "miOpen";
-            this.miOpen.Size = new System.Drawing.Size(102, 22);
+            this.miOpen.Size = new System.Drawing.Size(180, 22);
             this.miOpen.Text = "Open";
             this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
             // 
@@ -165,14 +167,14 @@
             this.miSave.BackColor = System.Drawing.SystemColors.ControlText;
             this.miSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.miSave.Name = "miSave";
-            this.miSave.Size = new System.Drawing.Size(102, 22);
+            this.miSave.Size = new System.Drawing.Size(180, 22);
             this.miSave.Text = "Save";
             this.miSave.Click += new System.EventHandler(this.miSave_Click);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(102, 22);
+            this.miExit.Size = new System.Drawing.Size(180, 22);
             this.miExit.Text = "Exit";
             this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
@@ -184,7 +186,7 @@
             this.оПрограммеToolStripMenuItem});
             this.menuStrip3.Location = new System.Drawing.Point(55, 1);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(182, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(62, 24);
             this.menuStrip3.TabIndex = 8;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -226,6 +228,13 @@
             this.version.Size = new System.Drawing.Size(180, 22);
             this.version.Text = "Version";
             this.version.Click += new System.EventHandler(this.version_Click);
+            // 
+            // miSaveAs
+            // 
+            this.miSaveAs.Name = "miSaveAs";
+            this.miSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.miSaveAs.Text = "SaveAs";
+            this.miSaveAs.Click += new System.EventHandler(this.miSaveAs_Click);
             // 
             // Form1
             // 
@@ -273,6 +282,7 @@
         private System.Windows.Forms.ToolStripMenuItem reference;
         private System.Windows.Forms.ToolStripMenuItem copyright;
         private System.Windows.Forms.ToolStripMenuItem version;
+        private System.Windows.Forms.ToolStripMenuItem miSaveAs;
     }
 }
 

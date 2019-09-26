@@ -20,6 +20,7 @@ namespace BelieveOrNotBelieve
             btnSaveQuest.Enabled = false;
             btnDelete.Enabled = false;
             cboxTrue.Enabled = false;
+            //miSaveAs.Enabled = false;
         }
 
         private void miNew_Click(object sender, EventArgs e)
@@ -69,6 +70,20 @@ namespace BelieveOrNotBelieve
             this.Close();
         }
 
+        /// <summary>
+        /// "Сохранить как" с выбором файла для сохранения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void miSaveAs_Click(object sender, EventArgs e)
+        {
+            if (database == null) MessageBox.Show("База данных не создана");
+            else {
+                SaveFileDialog sfd = new SaveFileDialog();
+                if (sfd.ShowDialog() == DialogResult.OK) database.SaveAs(sfd.FileName);
+            } 
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (database == null)
@@ -115,6 +130,7 @@ namespace BelieveOrNotBelieve
             btnSaveQuest.Enabled = true;
             btnDelete.Enabled = true;
             cboxTrue.Enabled = true;
+            //miSaveAs.Enabled = true;
         }
 
         private void description_Click(object sender, EventArgs e)
