@@ -47,7 +47,10 @@
             // 
             // tboxQuestion
             // 
-            this.tboxQuestion.Location = new System.Drawing.Point(0, 24);
+            this.tboxQuestion.BackColor = System.Drawing.Color.Black;
+            this.tboxQuestion.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tboxQuestion.ForeColor = System.Drawing.SystemColors.Window;
+            this.tboxQuestion.Location = new System.Drawing.Point(0, 27);
             this.tboxQuestion.Multiline = true;
             this.tboxQuestion.Name = "tboxQuestion";
             this.tboxQuestion.Size = new System.Drawing.Size(614, 157);
@@ -55,9 +58,10 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(23, 197);
+            this.btnAdd.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAdd.Location = new System.Drawing.Point(12, 195);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(109, 25);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -65,9 +69,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(214, 197);
+            this.btnDelete.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDelete.Location = new System.Drawing.Point(160, 194);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(109, 25);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -75,9 +80,10 @@
             // 
             // btnSaveQuest
             // 
-            this.btnSaveQuest.Location = new System.Drawing.Point(295, 197);
+            this.btnSaveQuest.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSaveQuest.Location = new System.Drawing.Point(284, 194);
             this.btnSaveQuest.Name = "btnSaveQuest";
-            this.btnSaveQuest.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveQuest.Size = new System.Drawing.Size(109, 25);
             this.btnSaveQuest.TabIndex = 3;
             this.btnSaveQuest.Text = "Сохранить";
             this.btnSaveQuest.UseVisualStyleBackColor = true;
@@ -85,25 +91,29 @@
             // 
             // nudNumber
             // 
+            this.nudNumber.BackColor = System.Drawing.Color.White;
+            this.nudNumber.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nudNumber.ForeColor = System.Drawing.SystemColors.WindowText;
             this.nudNumber.Location = new System.Drawing.Point(411, 197);
             this.nudNumber.Name = "nudNumber";
-            this.nudNumber.Size = new System.Drawing.Size(58, 20);
+            this.nudNumber.Size = new System.Drawing.Size(92, 23);
             this.nudNumber.TabIndex = 4;
             this.nudNumber.ValueChanged += new System.EventHandler(this.nudNumber_ValueChanged);
             // 
             // cboxTrue
             // 
             this.cboxTrue.AutoSize = true;
-            this.cboxTrue.Location = new System.Drawing.Point(493, 200);
+            this.cboxTrue.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cboxTrue.Location = new System.Drawing.Point(531, 201);
             this.cboxTrue.Name = "cboxTrue";
-            this.cboxTrue.Size = new System.Drawing.Size(64, 17);
+            this.cboxTrue.Size = new System.Drawing.Size(68, 19);
             this.cboxTrue.TabIndex = 5;
             this.cboxTrue.Text = "Правда";
             this.cboxTrue.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 25);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(611, 24);
             this.menuStrip1.TabIndex = 6;
@@ -115,23 +125,28 @@
             this.ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(611, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(611, 25);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // ToolStripMenuItem
             // 
+            this.ToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miNew,
             this.miOpen,
             this.miSave,
             this.miExit});
+            this.ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            this.ToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
             this.ToolStripMenuItem.Text = "File";
             // 
             // miNew
             // 
+            this.miNew.BackColor = System.Drawing.Color.Black;
+            this.miNew.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.miNew.Name = "miNew";
             this.miNew.Size = new System.Drawing.Size(180, 22);
             this.miNew.Text = "New";
@@ -139,6 +154,8 @@
             // 
             // miOpen
             // 
+            this.miOpen.BackColor = System.Drawing.SystemColors.ControlText;
+            this.miOpen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.miOpen.Name = "miOpen";
             this.miOpen.Size = new System.Drawing.Size(180, 22);
             this.miOpen.Text = "Open";
@@ -146,6 +163,8 @@
             // 
             // miSave
             // 
+            this.miSave.BackColor = System.Drawing.SystemColors.ControlText;
+            this.miSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.miSave.Name = "miSave";
             this.miSave.Size = new System.Drawing.Size(180, 22);
             this.miSave.Text = "Save";
@@ -162,7 +181,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 234);
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ClientSize = new System.Drawing.Size(611, 230);
             this.Controls.Add(this.cboxTrue);
             this.Controls.Add(this.nudNumber);
             this.Controls.Add(this.btnSaveQuest);
